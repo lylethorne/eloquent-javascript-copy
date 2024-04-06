@@ -15,6 +15,29 @@ function triangles(whatever) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
+  let count = 0;
+//creating loop to run from 1 to 15
+while(count >= 0 && count <= 14){
+    //incrementing each time by 1
+    count++
+    //if the iteration count is on is divisible by 3 and by 5
+    if(count % 3 === 0 && count % 5 === 0){
+        //prints fizzbuzz
+        console.log('fizzbuzz');
+        //if it is only divisible by 3
+    }else if(count % 3 === 0){
+        //print fizz
+        console.log('fizz');
+        //only divisible by 5
+    }else if (count % 5 === 0){
+        //print buzz
+        console.log('buzz');
+        //finaly else statement for count
+    }else {
+        //print ittttt
+        console.log(count);
+    }
+}
   
 }
 

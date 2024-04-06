@@ -4,10 +4,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(whatever) {
-  let result = '#';
- for(let numb = 0; numb <= 7; numb+= 1){
-  console.log(result);
- }
+  let x = '';
+  for(let i = 1; i <= whatever; i++){
+    for(let j = 1; j <= i; j++){
+     x += '#'
+    }
+    x += '\n';
+  }
+  return x + '\n';
 
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,6 +50,13 @@ while(count >= 0 && count <= 14){
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard() {
+  let count = 1;
+  let x = ' # # #'
+  let y = '# # # '
+  while(count <= 8){
+    console.log(x + '\n' + y);
+    count += 2;
+  }
 
 }
 

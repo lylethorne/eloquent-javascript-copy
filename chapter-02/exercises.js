@@ -4,14 +4,20 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(whatever) {
+  //initializing x and assigning to empty string
   let x = '';
+  //for loop for rows
   for(let i = 1; i <= whatever; i++){
+    //for loop inner
     for(let j = 1; j <= i; j++){
+      //assigning increasing value to x
      x += '#'
     }
+    //on each iteration adding a new line
     x += '\n';
   }
-  return x + '\n';
+  //bring it on back now
+  return x;
 
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -49,15 +55,28 @@ while(count >= 0 && count <= 14){
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-  let count = 1;
-  let x = ' # # #'
-  let y = '# # # '
-  while(count <= 8){
-    console.log(x + '\n' + y);
-    count += 2;
+function drawChessboard(whatever) {
+  //initz count to an empty string
+ let count = '';
+ //for loop for rows
+ for(let i = 0; i < whatever; i++){
+  //for loop for inner
+  for(let j = 0; j < whatever; j++){
+    //if they have the same remainder
+    if(i % 2 === j % 2){
+      //add a space
+      count += ' ';
+      //and if they do not
+    }else{
+      //add a #
+      count += '#';
+    }
   }
-
+  //adding a line after each iteration
+  count += '\n'
+ }
+ //returnnnnnn
+return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

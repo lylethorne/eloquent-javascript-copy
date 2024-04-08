@@ -8,18 +8,13 @@ function triangles(whatever) {
   let x = '';
   //for loop for rows
   for(let i = 1; i <= whatever; i++){
-    //for loop inner
-    for(let j = 1; j <= i; j++){
       //assigning increasing value to x
-     x += '#'
-    }
-    //on each iteration adding a new line
-    x += '\n';
+       console.log(x += '#');
+      }
+      //logging each line of code
+  
   }
-  //bring it on back now
-  return x;
 
-}
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -72,11 +67,10 @@ function drawChessboard(whatever) {
       count += '#';
     }
   }
-  //adding a line after each iteration
   count += '\n'
  }
  //returnnnnnn
-return count;
+console.log(count);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

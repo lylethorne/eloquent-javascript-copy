@@ -40,7 +40,7 @@ function countChars(string, letter) {
 let count = 0;
 for(let i = 0; i < string.length; i ++){
   if(string[i] === letter){
-    count += count + 1;
+    count += 1;
   }
 }
 return count;
@@ -54,7 +54,7 @@ function countBs(string) {
   let count = 0;
   for(let i = 0; i < string.length; i ++){
     if(string[i] === 'B'){
-      count += count + 1;
+      count += 1;
     }
   }
 return count;

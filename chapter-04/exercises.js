@@ -3,23 +3,35 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function range(start, end, step) {
-  let output = [];
+  let array = [];
   if(step === undefined){
-    start + 1 && end + 1;
+    if(start < end){
+      while (start <= end) {
+        array.push(start);
+        start++;
+      }
+    }else{
+      while(start >= end){
+        array.push(start);
+        start --;
+       }
+    }
+  return array;
   }
-  if(start - end === -1 || start - end === 1 || start - end === 0){
-    return output;
-  }
-  if(start >= end){
-    output.push(start - 1);
-    return range(start -1, end, output)
-  }else{
-    output.push(start + 1);
-    return range(start + 1, end, output)
-  }
-  return output;
+    if(start < end){
+      while (start <= end) {
+        array.push(start);
+        start += step;
+      }
+    }else{
+      while(start >= end){
+        array.push(start);
+        start -= step;
+       }
+    }
+    return array;
+  
 }
-
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -83,8 +95,8 @@ function listToArray(list, array=[]) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
-
+function prepend(value1, func) {
+  return func.unshift(value1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

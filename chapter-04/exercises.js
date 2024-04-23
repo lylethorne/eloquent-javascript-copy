@@ -4,6 +4,9 @@
 
 function range(start, end, step) {
   let array = [];
+  if(start - end === 0 || start - end === 1){
+    return array;
+  }
   if(step === undefined){
     if(start < end){
       while (start <= end) {
@@ -18,6 +21,7 @@ function range(start, end, step) {
     }
   return array;
   }
+  if(step > 0){
     if(start < end){
       while (start <= end) {
         array.push(start);
@@ -29,6 +33,7 @@ function range(start, end, step) {
         start -= step;
        }
     }
+  }
     if(step < 0){// step is less than 0
       return array;
     }

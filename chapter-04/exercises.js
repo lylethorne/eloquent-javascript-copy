@@ -121,7 +121,24 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(obj1, obj2) {
+  //hard out if a and b are equal off the bat
+if(obj1 === obj2){
+  return true
+}
+//hard false if a or b are null or not an obj
+if(obj1=== null || obj2 === null || obj1 !== 'object' || obj2 !== 'object'){
+  return false;
+}
+//accessing keys on both objects
+let obj1Keys = Object.keys(obj1);
+let obj2Keys = Object.keys(obj2);
+
+//hard false if the keys are not the same length
+if(obj1Keys.length != obj2Keys.length){
+  return false;
+}
+
 
 }
 

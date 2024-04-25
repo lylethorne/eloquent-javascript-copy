@@ -37,7 +37,27 @@ function every(array, test) {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(text) {
+  //initz count to the result of the count by value of
+  let count = countBy(text, char => {
+    //intiz script to result of charascript at the character and code point of 0
+    let script = characterScript(char.codePointAt(0));
+    //return script if script.direction
+    return script ? script.direction : 'none';
+    //filtering away the object name
+  }).filter(({name}) => name != 'none');
+  // if the length of count is 0
+  if(count.length === 0){
+    return 'ltr';
+  }
+  //else count length is not 0, reduce the current  
+  return count.reduce((accumulator, current) => {
+    if(accumulator.count > current.count){
+      return accumulator;
+    }
+    return current;
+  });
+
 
 }
 

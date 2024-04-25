@@ -129,12 +129,12 @@ return nth(list.rest, n-1)
 ////////////////////////////////////////////////////////////////////////////////
 
 function deepEqual(obj1, obj2) {
-  //hard out if a and b are equal off the bat
-if(obj1 === obj2){
-  return true
+
+if(typeof obj1 !== 'object' && typeof obj2 !== 'object' ){
+  return obj1 === obj2;
 }
-//hard false if a or b are null or not an obj
-if(obj1=== null || obj2 === null || obj1 !== 'object' || obj2 !== 'object'){
+//hard false if either  obj1 and obj2 are  an obj
+if(typeof obj1 !== 'object' ||  typeof obj2 !== 'object'){
   return false;
 }
 //accessing keys on both objects
@@ -142,11 +142,16 @@ let obj1Keys = Object.keys(obj1);
 let obj2Keys = Object.keys(obj2);
 
 //hard false if the keys are not the same length
-if(obj1Keys.length != obj2Keys.length){
+if(obj1Keys.length !== obj2Keys.length){
   return false;
 }
-
-
+//looping thru one of the arrays to determine if it's values equal the others
+for(let i = 0; i < obj1Keys.length; i++){
+  if(!obj2Keys.includes(obj1Keys[i]) || !deepEqual(obj1[obj1Keys[i]], obj2[obj1Keys[i]])){
+    return false;
+  }
+}
+return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -103,7 +103,7 @@ function listToArray(list, array=[]) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function prepend(value, list) {
-  //declaring rest as obj holding value first and the rest to value of list
+  //declaring rest as obj holding value first and the key of rest to value of list
   let rest = { value, rest: list};
   return rest;
 }

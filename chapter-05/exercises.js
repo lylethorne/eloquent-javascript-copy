@@ -25,7 +25,12 @@ for(let i = value; test(value); value = update(value)){
 // /////////////////////////////////////////////////////////////////////////////
 
 function every(array, test) {
-
+  for(let i = 0; i < array.length; i++){
+    if(!test(array[i], i, array)){
+            return false;
+    }
+}
+return true;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
